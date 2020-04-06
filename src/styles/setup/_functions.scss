@@ -1,0 +1,115 @@
+//------------------------------------
+// #FUNCTIONS
+//------------------------------------
+// Functions devem ser independentes o máximo que for possível,
+// de forma que a ordem deles nesse arquivo não seja crucial para o SCSS ser compilado.
+
+
+
+
+
+//------------------------------------
+//    #COLOR ARRAYS
+//------------------------------------
+@function gray-shades($key) {
+    @return map-get($gray-shades, $key);
+}
+
+
+
+
+
+//------------------------------------
+//    #COLOR CONTRAST
+//------------------------------------
+
+// EXEMPLO
+//
+// .castanheira {
+//    @include color-contrast(#c0ffee, #b4d455, #d0deda);
+// }
+//
+@function color-contrast($color, $bright, $dark) {
+    $color-brightness: round((red($color) * 299) + (green($color) * 587) + (blue($color) * 114) / 1000);
+    $light-color: round((red($bright) * 299) + (green($bright) * 587) + (blue($bright) * 114) / 1000);
+
+    //@if abs($color-brightness) < ($light-color / 2){
+    @if abs($color-brightness) < ($light-color / 1.65) {
+        @return $bright;
+    } @else {
+        @return $dark;
+    }
+}
+
+
+
+
+
+//------------------------------------
+//    #STRIP UNIT
+//------------------------------------
+/// Remove a unidade de um valor
+/// @param {Number} $number - Número que terá a unidade removida
+/// @return {Number} - Número sem unidade
+@function strip-unit($number) {
+    @if type-of($number) == 'number'and not unitless($number) {
+        @return $number / ($number * 0 + 1);
+    }
+
+    @return $number;
+}
+
+
+
+
+
+//------------------------------------
+//    #TEXT CONTRAST
+//------------------------------------
+
+// EXEMPLO
+//
+// .castanheira {
+//    @include text-contrast(#c0ffee);
+// }
+//
+@mixin text-contrast($n) {
+    $pure-white: #fff;
+
+    $color-brightness: round((red($n) * 299) + (green($n) * 587) + (blue($n) * 114) / 1000);
+    $light-color: round((red($pure-white) * 299) + (green($pure-white) * 587) + (blue($pure-white) * 114) / 1000);
+
+    //@if abs($color-brightness) < ($light-color / 2) {
+    //@if abs($color-brightness) < ($light-color / 1.65) {
+    @if abs($color-brightness) < ($light-color / 1.5) {
+        color: $white;
+    } @else {
+        color: $gray-60;
+    }
+}
+
+
+
+
+
+//------------------------------------
+//    #Z-INDEX
+//------------------------------------
+// Ver exemplo em _mixins.scss #Z-INDEX
+
+// EXEMPLO
+//
+// .castanheira {
+//    z-index: z-index(castanheira); // castanheira: 9999;
+// }
+//
+@function z-index($key) {
+    $target: map-get($z-index, $key);
+
+    @if $target {
+        @return $target;
+    }
+
+    @warn 'There is no item "#{$key}" in this list; choose one of: #{$z-index}';
+    @return null;
+}

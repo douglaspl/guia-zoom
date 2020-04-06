@@ -1,0 +1,118 @@
+// @if ($debugger == true) {
+//     *,
+//     *::before,
+//     *::after {
+//         background-color: transparentize($color: $black, $amount: .85);
+//         outline: 1px solid $color-error;
+//     }
+// }
+
+html,
+body {
+    color: $gray-40;
+    font-family: $font--base;
+    font-size: 12px;
+    line-height: 1.75;
+    margin: 0;
+    min-height: 100vh;
+    padding: 0;
+
+    @include media('>sm') {
+        font-size: 14px;
+    }
+
+    @include media('>xl') {
+        font-size: 16px;
+    }
+
+    // @include media('>xxl') {
+    //     font-size: 24px;
+    // }
+
+}
+
+main {
+    height: 100%;
+    margin: 0 auto;
+    max-width: 54rem;
+    padding: 1rem 2rem;
+}
+
+img {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, .15);
+    display: block;
+    height: auto;
+    margin-bottom: 6rem;
+    max-width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: $font--title;
+    letter-spacing: -.05em;
+    line-height: 1;
+}
+
+p {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+
+    & + & {
+        margin-top: 1.5rem;
+    }
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+}
+
+a {
+    // color: inherit;
+    font-style: none;
+    line-height: inherit;
+    // text-decoration: none;
+}
+
+a,
+button {
+
+    &:focus {
+        box-shadow: 0 0 0 .2rem transparentize($gray-10, .5);
+        outline: 0 solid transparent;
+    }
+
+}
+
+hr {
+    margin: $distance--md 0;
+    opacity: .35;
+
+    @include media('>md') {
+        margin: $distance--ultra 0;
+    }
+
+}
+
+ul {
+    list-style: none;
+    margin-bottom: 1rem;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+}
+
+input,
+select,
+textarea {
+    background-color: $white;
+    border: 1px solid $gray-10;
+    box-shadow: none;
+    font-size: 1.2em;
+    font-weight: bold;
+    padding: $distance--xxs;
+}

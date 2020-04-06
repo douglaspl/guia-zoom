@@ -1,0 +1,69 @@
+.list {
+    $this: &;
+
+    font-size: 1rem;
+    padding-left: 2rem;
+
+    li {
+
+        line-height: 1.25;
+        margin-bottom: $distance--sm;
+        position: relative;
+
+        &::before {
+            $size: .25rem;
+
+            background-color: $gray-20;
+            border-radius: 50%;
+            content: '';
+            height: $size;
+            position: absolute;
+            right: calc(100% + #{$distance--xxs});
+            top: .5rem;
+            transform: translateY(50%);
+            width: $size;
+
+            @include media('>md') {
+                $size: .25rem;
+
+                height: $size;
+                right: calc(100% + #{$distance--xs});
+                width: $size;
+            }
+
+        }
+
+    }
+
+    &--ordered {
+        counter-reset: section;
+        list-style: none;
+        margin-left: -2rem;
+
+        > li {
+            margin-bottom: 8rem;
+
+            &::before {
+                background-color: $gray-5;
+                border-radius: 0;
+                color: $gray-30;
+                content: counter(section);
+                counter-increment: section;
+                display: block;
+                font-size: 3rem;
+                font-weight: bold;
+                height: 1em;
+                line-height: 1;
+                padding-bottom: 1.25em;
+                padding-left: 1em;
+                padding-right: 0;
+                right: 100%;
+                text-align: right;
+                top: 0;
+                transform: translate(-15%, 5%);
+                width: auto;
+            }
+        }
+    }
+
+}

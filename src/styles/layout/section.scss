@@ -1,0 +1,97 @@
+.section {
+    // variables
+    $section-title-margin-bottom: $distance--md;
+    $section-vertical-padding: $distance--xxl;
+
+    // variables--md
+    $section-title-margin-bottom--md: $distance--xxl;
+    $section-vertical-padding--md: $distance--super;
+
+    // variables--xl
+    $section-title-margin-bottom--xl: $distance--xxl;
+    $section-vertical-padding--xl: $distance--super;
+
+    /////////////////////////////
+    /////////////////////////////
+
+    padding-bottom: $section-vertical-padding;
+    padding-top: $section-vertical-padding;
+
+    @include media('>md') {
+        padding-bottom: $section-vertical-padding--md;
+        padding-top: $section-vertical-padding--md;
+    }
+
+    @include media('>xl') {
+        padding-bottom: $section-vertical-padding--xl;
+        padding-top: $section-vertical-padding--xl;
+    }
+
+    &__title {;
+        font-size: $font-size--super;
+        font-weight: 700;
+        letter-spacing: -.025em;
+        line-height: 1;
+        margin-bottom: $section-title-margin-bottom;
+
+        @include media('>sm') {
+            &--center {
+                text-align: center;
+            }
+        }
+
+        @include media('>md') {
+            line-height: 1.2;
+            margin-bottom: $section-title-margin-bottom--md;
+        }
+
+        @include media('>xl') {
+            margin-bottom: $section-title-margin-bottom--xl;
+        }
+
+    }
+
+    &__header {
+        margin-bottom: $section-title-margin-bottom;
+
+        > [class*='__title'] {
+            margin-bottom: $distance--sm;
+        }
+
+        @include media('>sm') {
+            &--center {
+                text-align: center;
+            }
+        }
+
+    }
+
+    &--higher {
+        // variables
+        $section-vertical-padding: $distance--ultra;
+
+        // variables--md
+        $section-vertical-padding--md: $distance--ultra;
+
+        // variables--xl
+        $section-vertical-padding--xl: $distance--ultra;
+
+        /////////////////////////////
+        /////////////////////////////
+
+        padding-bottom: $section-vertical-padding;
+        padding-top: $section-vertical-padding;
+
+        @include media('>md') {
+            padding-bottom: $section-vertical-padding--md;
+            padding-top: $section-vertical-padding--md;
+        }
+
+        @include media('>xl') {
+            padding-bottom: $section-vertical-padding--xl;
+            padding-top: $section-vertical-padding--xl;
+        }
+
+    }
+
+}

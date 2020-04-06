@@ -1,0 +1,211 @@
+//------------------------------------
+//    #AUX
+//------------------------------------
+$debugger: false;
+$show-rhythm: false;
+$show-v-rhythm: true;
+$show-h-rhythm: true;
+$sanitize: false;
+
+
+
+
+
+//------------------------------------
+//    #BREAKPOINTS
+//------------------------------------
+// Referência para uso http://include-media.com/#features.
+// Os nomes pré-definidos foram trocados para xs, sm, md, lg, xl.
+
+// EXEMPLO
+
+// .sarmento {
+//    color: #bada55;
+//
+//    @include media('sm') {
+//        color: #c0ffee;
+//    }
+//
+// }
+
+// scss-lint:disable ZeroUnit
+// Considerando 16px como base
+$breakpoints: (
+    xs: 0, // Extra small screen / phone
+    sm: 600px, //544px  // Small screen / phone
+    md: 900px, //768px  // Medium screen / tablet
+    lg: 1200px, //992px  // Large screen / desktop
+    xl: 1800px, //1200px // Extra large screen / wide desktop
+    xxl: 2200px // acima de 2000px
+) !default;
+// scss-lint:enable ZeroUnit
+
+
+
+
+
+//------------------------------------
+//    #COLORS
+//------------------------------------
+$hue: 148;
+
+// https://www.colorbox.io/#steps=7#hue_start=60#hue_end=80#hue_curve=easeInQuad#sat_start=4#sat_end=18#sat_curve=easeOutSine#sat_rate=130#lum_start=95#lum_end=5#lum_curve=linear#lock_hex=#f2f9fa#minor_steps_map=0
+$gray-shades: (
+    0:  hsl($hue, 3%, 98%), // #f2f9fa
+    5:  hsl($hue, 3%, 93%), // #d8e6e3
+    10: hsl($hue, 3%, 80%), // #c0d2c9
+    20: hsl($hue, 3%, 65%), // #93aa99
+    30: hsl($hue, 3%, 45%), // #6c836c
+    40: hsl($hue, 3%, 28%), // #4d5b48
+    50: hsl($hue, 3%, 15%), // #2e3428
+    60: hsl($hue, 3%, 5%) // #0c0d0a
+);
+
+$gray-0: gray-shades(0);
+$gray-5: gray-shades(5);
+$gray-10: gray-shades(10);
+$gray-20: gray-shades(20);
+$gray-30: gray-shades(30);
+$gray-40: gray-shades(40);
+$gray-50: gray-shades(50);
+$gray-60: gray-shades(60);
+
+$white: hsla(0, 0%, 100%, 1) !default;
+$black: hsla($hue, 20%, 4%, 1) !default;
+
+// aux
+$color-error: hsla(2, 60%, 45%, 1) !default;
+$color-info: hsla(210, 60%, 36%, 1) !default;
+$color-success: hsla(115, 50%, 40%, 1) !default;
+$color-warning: hsla(38, 87%, 50%, 1) !default;
+
+$colors: (
+    (gray-0, $gray-0),
+    (gray-5, $gray-5),
+    (gray-10, $gray-10),
+    (gray-20, $gray-20),
+    (gray-30, $gray-30),
+    (gray-40, $gray-40),
+    (gray-50, $gray-50),
+    (gray-60, $gray-60),
+
+    ('black', $black),
+    ('white', $white),
+
+    (error, $color-error),
+    (info, $color-info),
+    (success, $color-success),
+    (warning, $color-warning)
+);
+
+
+
+
+
+//------------------------------------
+//    #DISTANCE
+//------------------------------------
+$distance--xxs: .5rem; // 8px
+$distance--xs: .75rem; // 12px
+$distance--sm: 1rem; // 16px
+$distance--md: 2rem; // 32px
+$distance--lg: 2.25rem; // 36px
+$distance--xl: 2.5rem; // 40px
+$distance--xxl: 3rem; // 60px
+
+$distance--super: 3.75rem; // 60px
+$distance--max: 4.5rem; // 72px
+$distance--ultra: 8rem; // 128px
+
+
+
+
+
+//------------------------------------
+//    #FONT
+//------------------------------------
+$font--base: -apple-system, BlinkMacSystemFont, 'Segoe UI', Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+$font--title: sans-serif;
+
+
+
+
+
+//------------------------------------
+//    #FONT SIZES
+//------------------------------------
+// Basic sizes.
+$font-size--xxs: .875rem; // 14px
+$font-size--xs: 1rem; // 16px
+$font-size--sm: 1.25rem; // 18px
+$font-size--md: 1.5rem; // 24px
+$font-size--lg: 1.75rem; // 28px
+$font-size--xl: 2rem; // 32px
+$font-size--xxl: 2.25rem; // 36px
+
+// Very few uses.
+$font-size--super: 2.5rem; // 40px
+$font-size--max: 3rem; // 48px
+
+
+
+
+
+
+//------------------------------------
+//    #RADIUS
+//------------------------------------
+$radius: 4px;
+$radius--md: $radius * 2;
+$radius--lg: $radius * 4;
+$radius--capsule: 99rem;
+
+
+
+
+
+//------------------------------------
+//    #SHADOW DEPTH
+//------------------------------------
+$shadow-1:  0 1px 1px rgba($gray-30, .09),
+            0 2px 2px rgba($gray-30, .08),
+            0 3px 3px rgba($gray-30, .07),
+            0 4px 4px rgba($gray-30, .06),
+            0 5px 5px rgba($gray-30, .05),
+            0 6px 6px rgba($gray-30, .04);
+
+$shadow-2:  0 2px 2px rgba($gray-30, .08),
+            0 3px 3px rgba($gray-30, .08),
+            0 4px 4px rgba($gray-30, .08),
+            0 6px 6px rgba($gray-30, .08),
+            0 8px 8px rgba($gray-30, .08),
+            0 10px 10px rgba($gray-30, .08);
+
+$shadow-3:  0 4px 4px rgba($gray-30, .08),
+            0 6px 6px rgba($gray-30, .08),
+            0 8px 8px rgba($gray-30, .08),
+            0 10px 10px rgba($gray-30, .08),
+            0 12px 12px rgba($gray-30, .08),
+            0 16px 16px rgba($gray-30, .08);
+
+$shadow-4:  0 8px 8px rgba($gray-30, .09),
+            0 12px 12px rgba($gray-30, .08),
+            0 16px 16px rgba($gray-30, .07),
+            0 20px 20px rgba($gray-30, .06),
+            0 24px 24px rgba($gray-30, .06),
+            0 28px 28px rgba($gray-30, .05);
+
+$shadow-5:  0 8px 8px rgba($gray-30, .09),
+            0 12px 12px rgba($gray-30, .07),
+            0 16px 16px rgba($gray-30, .06),
+            0 24px 24px rgba($gray-30, .05),
+            0 32px 32px rgba($gray-30, .05),
+            0 40px 40px rgba($gray-30, .05);
+
+
+
+
+
+// BLOCKS
+$header-height: 4.5rem;
+$container-fluid-pad: $distance--md;

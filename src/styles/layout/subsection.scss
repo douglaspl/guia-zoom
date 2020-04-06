@@ -1,0 +1,33 @@
+.subsection {
+    // variables
+    $this: &;
+    $subsection-vertical-padding: $distance--md;
+
+    // variables--sm
+    $subsection-vertical-padding--sm: $distance--max;
+
+    // variables--md
+    $subsection-vertical-padding--md: $distance--ultra;
+
+
+    padding-bottom: $subsection-vertical-padding;
+    padding-top: $subsection-vertical-padding;
+    position: relative;
+
+    @include media('>sm') {
+        padding-bottom: $subsection-vertical-padding--sm;
+        padding-top: $subsection-vertical-padding--sm;
+    }
+
+    @include media('>md') {
+        padding-bottom: $subsection-vertical-padding--md;
+        padding-top: $subsection-vertical-padding--md;
+    }
+
+    &__title {
+        font-size: $font-size--xl;
+        line-height: 1;
+        margin-bottom: $distance--lg;
+    }
+
+}

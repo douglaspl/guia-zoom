@@ -1,0 +1,30 @@
+.btn {
+    background-color: $black;
+    border: 0 solid transparent;
+    border-radius: $radius;
+    color: $white;
+    cursor: pointer;
+    display: inline-block;
+    font-family: $font--title;
+    font-size: $font-size--xxs;
+    font-weight: 700;
+    letter-spacing: .05em;
+    line-height: 1.5;
+    padding: 1.25em 2em;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: 300ms;
+    user-select: none;
+    vertical-align: middle;
+    white-space: nowrap;
+
+    &--xxs { font-size: .625rem; padding: .75em 1.25em;}
+    &--xs { font-size: .625rem; }
+    &--sm { font-size: .825rem; }
+
+    &:hover {
+        background-color: $gray-40;
+    }
+
+}

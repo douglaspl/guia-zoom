@@ -1,0 +1,9 @@
+.main {
+    $this: &;
+
+    &__title {
+        font-size: 3em;
+        margin-bottom: 1em;
+    }
+
+}

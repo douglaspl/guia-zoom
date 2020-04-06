@@ -1,0 +1,37 @@
+// .container {
+//     $this: &;
+
+//     display: block;
+//     margin-left: auto;
+//     margin-right: auto;
+//     max-width: calc(100% - 2rem);
+
+//     @include media('>sm') {
+//         // $max-size: map-get($breakpoints, sm);
+//         $max-size: 100%;
+
+//         max-width: calc(#{$max-size} - 26px - 2rem);
+//     }
+
+//     @include media('>md') {
+//         // $max-size: map-get($breakpoints, md);
+//         $max-size: 100%;
+
+//         max-width: calc(#{$max-size} - 48px - 2rem);
+//     }
+
+//     @include media('>lg') {
+//         // $max-size: map-get($breakpoints, lg);
+//         $max-size: 100%;
+
+//         max-width: calc(#{$max-size} - 32px - 2rem);
+//     }
+
+//     @include media('>xl') {
+//         // $max-size: map-get($breakpoints, xl);
+//         $max-size: 100%;
+
+//         max-width: calc(#{$max-size} - 60px - 2rem);
+//     }
+
+// }

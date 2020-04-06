@@ -1,0 +1,13 @@
+.highlight {
+    $this: &;
+
+    box-decoration-break: clone;
+    display: inline;
+    font-family: $font--title;
+    font-weight: 900;
+    line-height: 1.2;
+    padding: 0 .25em;
+
+    &--1-5x { font-size: 1.5em; }
+    &--2x { font-size: 2em; }
+}
